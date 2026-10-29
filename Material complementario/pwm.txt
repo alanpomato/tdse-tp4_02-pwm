@@ -1,0 +1,14 @@
+PWM está configurado en TIM3 con salida en PA6
+
+Configuración (IOC, sin modificar):
+- Reloj del timer: 64 MHz
+- PSC = 0, ARR = 65535, PWM mode 1, polaridad alta, Pulse (CCR1) = 0
+
+Fórmulas de la presentación teórica:
+- f_cnt = f_timer / (PSC + 1)
+- T_pwm = (ARR + 1) * (PSC + 1) / f_timer
+- duty  = CCR / (ARR + 1)   (PWM mode 1: salida alta mientras CNT sea menor a CCR)
+
+Con la configuración inicial se obtiene:
+T = 65536 / 64 MHz = 1,024 ms  (f = 976,6 Hz), duty = 0 % (CCR = 0).
+El duty y el período se modifica por el código en setPWM.

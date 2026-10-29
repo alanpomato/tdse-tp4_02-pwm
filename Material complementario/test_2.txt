@@ -1,0 +1,13 @@
+TEST_2
+
+Qué hace el código: period barre entre PERIOD/4 (ARR/4 = 16383) y PERIOD/2 (ARR/2 = 32767) de a 100 cada 4 ms, entonces el periodo va entre dichos valores, ya que:
+
+T_pwm = (ARR + 1) * (PSC + 1) 
+
+Duty cycle: NO se modifica. Como pulse = period/2, el duty queda fijo en 50 % cualquiera sea el período.
+
+LED: brillo constante, no cambia.
+
+Comparación con TEST_1:
+- TEST_1 cambia el duty con período fijo -> el brillo varía.
+- TEST_2 cambia el período con duty fijo -> el brillo NO varía.

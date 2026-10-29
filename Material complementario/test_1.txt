@@ -1,0 +1,12 @@
+TEST_1
+
+CCR1 sube de a 100 cada 4 ms hasta llegar a period (ARR = 65535) y después baja hasta 0, en forma continua.
+
+Período: T = 65536 / 64 MHz = 1,024 ms. 
+
+Duty cycle: Sí se modifica, barre de 0 % a 100 % y vuelve. En el osciloscopio se observa que el ancho del pulso alto crece y decrece con el período fijo.
+
+duty  = CCR / (ARR + 1)
+
+LED: el brillo sube y baja en forma continua
+
